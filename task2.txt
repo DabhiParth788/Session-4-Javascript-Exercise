@@ -1,0 +1,27 @@
+Task 2: Need to create a Javascript function for the sum of string (Example like "1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9")
+
+---------------------------------------------------------------------------------------------------------------
+ 
+function task2(input) {
+    let sum = 0;
+    let tempNumber = "";
+
+    for (let i = 0; i < input.length; i++) {
+        const char = input[i];
+
+        if (char === ',') {
+            if (tempNumber.length > 0) {
+                sum += parseFloat(tempNumber);
+                tempNumber = "";
+            }
+        } else {
+            tempNumber += char.trim(); 
+        }
+    }
+
+    if (tempNumber.length > 0) {
+        sum += parseFloat(tempNumber);
+    }
+
+    return sum;
+}

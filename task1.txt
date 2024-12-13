@@ -1,0 +1,20 @@
+Task 1: Need to create JavaScript functions for a sum of numbers in the string (Example like “foo8bar8cat2tc2”)
+
+---------------------------------------------------------------------------------------------------------------
+ 
+function task1(string) {
+  let sum = 0;
+  let tempNumber = "";
+  for (let char of string) {
+    if (!isNaN(char) && char !== " ") {
+      tempNumber += char;
+    } else if (tempNumber.length > 0) {
+      sum += parseInt(tempNumber);
+      tempNumber = "";
+    }
+  }
+  if (tempNumber.length > 0) {
+    sum += parseInt(tempNumber);
+  }
+  return sum;
+}

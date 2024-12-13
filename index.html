@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 4 Javascript Concepts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold text-center mb-6">Javascript Exercise</h1>
+
+    <!-- Task Selection -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-green-500 text-white text-center py-6 rounded-lg shadow-lg cursor-pointer hover:bg-green-600"
+            onclick="showTask('task1'); loadTaskCode('task1.txt');">
+            Task 1
+        </div>
+        <div class="bg-green-500 text-white text-center py-6 rounded-lg shadow-lg cursor-pointer hover:bg-green-600"
+            onclick="showTask('task2'); loadTaskCode('task2.txt');">
+            Task 2
+        </div>
+        <div class="bg-green-500 text-white text-center py-6 rounded-lg shadow-lg cursor-pointer hover:bg-green-600"
+            onclick="showTask('task3'); loadTaskCode('task3.txt');">
+            Task 3
+        </div>
+        <div class="bg-green-500 text-white text-center py-6 rounded-lg shadow-lg cursor-pointer hover:bg-green-600"
+            onclick="showTask('task4'); loadTaskCode('task4.txt');">
+            Task 4
+        </div>
+        <div class="bg-green-500 text-white text-center py-6 rounded-lg shadow-lg cursor-pointer hover:bg-green-600"
+            onclick="showTask('task5'); loadTaskCode('task5.txt');">
+            Task 5
+        </div>
+        <div class="bg-green-500 text-white text-center py-6 rounded-lg shadow-lg cursor-pointer hover:bg-green-600"
+            onclick="showTask('task6'); loadTaskCode('task6.txt');">
+            Task 6
+        </div>
+    </div>
+
+    <!-- Code Display Area -->
+    <div id="code-display" class="mt-8 p-6 bg-white rounded-lg shadow-lg overflow-x-auto">
+        <p class="text-gray-600 text-center">Select a task to view the code.</p>
+    </div>
+
+    <!-- Task Display Area -->
+    <div id="task-display" class="mt-8 p-6 bg-white rounded-lg shadow-lg">
+        <div id="task1" class="hidden">
+            <h3 class="text-xl font-bold mb-4">Task 1: Sum of Numbers in a String</h3>
+            <input type="text" id="task1Input" class="border p-2 mb-4" placeholder="Enter a string">
+            <button onclick="runTask1()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate Sum</button>
+            <p class="mt-4">Result: <span id="task1Result"></span></p>
+        </div>
+
+        <div id="task2" class="hidden">
+            <h3 class="text-xl font-bold mb-4">Task 2: Sum of Numbers in a CSV</h3>
+            <input type="text" id="task2Input" class="border p-2 mb-4" placeholder="Enter CSV values">
+            <button onclick="runTask2()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate Sum</button>
+            <p class="mt-4">Result: <span id="task2Result"></span></p>
+        </div>
+
+        <div id="task3" class="hidden">
+            <h3 class="text-xl font-bold mb-4">Task 3: Shape Areas</h3>
+            <button onclick="runTask3()" class="bg-blue-500 text-white px-4 py-2 rounded">Show Example Areas</button>
+            <p class="mt-4">Result: <span id="task3Result"></span></p>
+        </div>
+
+        <div id="task4" class="hidden">
+            <h3 class="text-xl font-bold mb-4">Task 4: University Departments</h3>
+            <input type="text" id="departmentInput" class="border p-2 mb-4" placeholder="Enter Department Name">
+            <button onclick="addDepartment()" class="bg-blue-500 text-white px-4 py-2 rounded">Add Department</button>
+            <button onclick="removeDepartment()" class="bg-red-500 text-white px-4 py-2 rounded">Remove Department</button>
+            <button onclick="displayDepartments()" class="bg-green-500 text-white px-4 py-2 rounded">Display Departments</button>
+            <p class="mt-4">Departments: <span id="task4Result"></span></p>
+        </div>
+
+        <div id="task5" class="hidden">
+            <h3 class="text-xl font-bold mb-4">Task 5: Fibonacci Series</h3>
+            <input type="number" id="steps" class="border p-2 mb-4" placeholder="Enter steps">
+            <button onclick="printFibonacci()" class="bg-blue-500 text-white px-4 py-2 rounded">Generate Series</button>
+            <p class="mt-4">Result: <span id="task5Result"></span></p>
+        </div>
+
+        <div id="task6" class="hidden">
+            <h3 class="text-xl font-bold mb-4">Task 6: Factorial</h3>
+            <input type="number" id="factorialInput" class="border p-2 mb-4" placeholder="Enter a number">
+            <button onclick="runFactorial()" class="bg-blue-500 text-white px-4 py-2 rounded">Calculate Factorial</button>
+            <p class="mt-4">Result: <span id="task6Result"></span></p>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
